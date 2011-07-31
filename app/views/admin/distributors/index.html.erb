@@ -57,7 +57,6 @@
 <div class="box">
   <h3><%= t('search') %></h3>
 
-  <% @distributor = Distributor.metasearch %>
   <%= form_for [:admin, @distributor] do |f| %>
     <%- locals = {:f => f} %>
     <%= hook :admin_distributors_index_search, locals do %>

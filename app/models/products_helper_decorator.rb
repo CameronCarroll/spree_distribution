@@ -7,10 +7,19 @@ ProductsHelper.module_eval do
     amount = product_or_variant.price
     amount += Calculator::Vat.calculate_tax_on(product_or_variant) if Spree::Config[:show_price_inc_vat]
     prices = [amount]
+    
+    #add distributor price
     if distributor_signed_in? && product_or_variant.is_distributable?
       prices[0] = [prices[0], "msrp"]
       prices << [product_or_variant.distribution_price, "distribution"]
     end
+    
+    #Add wholesale price
+    if wholesale_signed_in? && product_or_variant.is_wholesaleable?
+      prices[0] = [prices[0], "msrp"]
+      prices << [product_or_variant.wholesale_price, "wholesale"]
+    end
+    
     format_as_currency = options.delete(:format_as_currency)
     hide_labels = options.delete(:hide_labels)
     quantity = options.delete(:quantity) || 1

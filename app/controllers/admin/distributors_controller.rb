@@ -14,6 +14,10 @@ class Admin::DistributorsController < Admin::ResourceController
     render :action => :new
   end
   
+  def index
+    @distributors = Distributor.metasearch
+  end
+  
   def approve
     return redirect_to request.referer, :flash => { :error => "Distributor is already active." } if @distributor.active?
     @distributor.activate!

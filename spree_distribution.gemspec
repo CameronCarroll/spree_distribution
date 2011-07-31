@@ -1,0 +1,34 @@
+# -*- encoding: utf-8 -*-
+$:.push File.expand_path("../lib", __FILE__)
+require "spree_distribution/version"
+
+Gem::Specification.new do |s|
+  s.name        = "spree_distribution"
+  s.version     = SpreeDistribution::VERSION
+  s.platform    = Gem::Platform::RUBY
+  s.authors     = ["Spencer Steffen"]
+  s.email       = ["spencer@citrusme.com"]
+  s.homepage    = "https://github.com/citrus/spree_distribution"
+  s.summary     = %q{Distribution accounts for Spree Commerce.}
+  s.description = %q{Spree Distribution adds a distribution_price field to variants and allows users with a "distributor" role to access these prices.}
+ 
+  s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  
+  s.require_paths = ["lib"]
+  
+  s.add_dependency('spree_core', '>= 0.60.0')
+  s.add_dependency('spree_auth', '>= 0.60.0')
+  s.add_dependency('deface',     '>= 0.6.0')
+  
+  s.add_development_dependency('spree_sample',       '>= 0.60.0')
+  s.add_development_dependency('shoulda',            '>= 2.11.3')
+  s.add_development_dependency('factory_girl',       '>= 2.0.0.beta4')
+	s.add_development_dependency('capybara',           '>= 1.0.0')
+	s.add_development_dependency('spork',              '>= 0.9.0.rc9')
+  s.add_development_dependency('spork-testunit',     '>= 0.0.5')
+	s.add_development_dependency('sqlite3',            '>= 1.3.4')
+  s.add_development_dependency('dummier',            '>= 0.2.0')
+  
+end

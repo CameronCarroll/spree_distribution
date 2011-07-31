@@ -1,0 +1,4 @@
+<% order ||= @order %>
+<% if order && order.is_distribution? %>
+  <h4 class="distribution-customer-id"><%= t('distribution_customer', { :id => order.user_id }) %></h4>
+<% end %>

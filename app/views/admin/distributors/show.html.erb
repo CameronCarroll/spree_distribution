@@ -1,0 +1,68 @@
+<h1><%= t("distributor_account") %></h1>
+
+<div class="leftie">
+
+  <h5>Company:</h5>
+  <h3><%= @distributor.company %></h3>
+  
+  <h5>Buyer_contact:</h5>
+  <h3><%= @distributor.buyer_contact %></h3>
+  
+  <h5>Manager_contact:</h5>
+  <h3><%= @distributor.manager_contact %></h3>
+  
+  <h5>Phone:</h5>
+  <h3><%= @distributor.phone %></h3>
+  
+  <h5>Fax:</h5>
+  <h3><%= @distributor.fax %></h3>
+  
+  <h5>Resale_number:</h5>
+  <h3><%= @distributor.resale_number %></h3>
+  
+  <h5>Taxid:</h5>
+  <h3><%= @distributor.taxid %></h3>
+  
+  <h5>Web_address:</h5>
+  <h3><%= @distributor.web_address %></h3>
+  
+  <h5>Terms:</h5>
+  <h3><%= @distributor.terms %></h3>
+  
+  <h5>Notes:</h5>
+  <h3><%= simple_format @distributor.notes %></h3>
+
+</div>
+
+<div class="rightie">
+
+  <div class="adr">
+    <h4><%= t("bill_address") %></h4>
+    <%= render 'admin/shared/address', :address => @distributor.bill_address %>
+  </div>
+  <div class="adr">
+    <h4><%= t("ship_address") %></h4>
+    <%= render 'admin/shared/address', :address => @distributor.ship_address %>
+  </div>
+  
+  <div class="adr">
+    <h4><%= t("user_details") %></h4>
+    <p>
+      ID: <%= @distributor.user.id %>
+      <br/>
+      Email: <%= @distributor.user.email %>
+      <br/>
+      <%= link_to "view user", admin_user_path(@distributor.user) %> / 
+      <%= link_to "edit user", edit_admin_user_path(@distributor.user) %> /
+      <%= render "user_options", :user => @distributor.user %>
+    </p>
+  </div>
+    
+</div>
+
+<hr/>
+
+<p>
+  <%= link_to_edit @distributor %> <%= t('or') %>
+  <%= link_to t('back'), collection_url %>
+</p>

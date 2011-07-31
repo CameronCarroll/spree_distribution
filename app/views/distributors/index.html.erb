@@ -1,0 +1,21 @@
+<div class="left">
+  <%= hook :distribution_index_content do %>
+    <%= render 'hooks/distribution_static_content' %>
+  <% end %>
+</div>
+<div class="right">
+  <div class="left">  
+    <%= hook :distribution_index_signup do %>
+      <h3><%= t('distribution_apply') %></h3>
+      <p>Maecenas quis tortor arcu. Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis. Nam vestibulum, arcu sodales feugiat consectetur, nisl orci bibendum elit, eu euismod magna sapien ut nibh.</p>
+      <%= link_to 'Apply Now!', new_distributor_path, :class => 'button' %>
+    <% end %>  
+  </div>
+  <div class="right">  
+    <%= hook :distribution_index_login do %>
+      <h3><%= t('distribution_login') %></h3>
+      <%= render 'shared/login' %>
+    <% end %>
+  </div>
+</div>
+ 

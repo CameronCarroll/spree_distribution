@@ -1,0 +1,5 @@
+<% if @user.distributor? %>
+  <h1>Distributor</h1>
+  <h4 class="distribution-customer-id"><%= t('distribution_customer', { :id => @user.id }) %></h4>
+  <h4 class="distribution-customer-id"><%= t('distribution_customer_since', { :time => @user.distributor.created_at }) %></h4>
+<% end %>

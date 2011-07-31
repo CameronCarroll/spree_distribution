@@ -1,0 +1,6 @@
+<% distributor ||= @distributor %>
+<% if distributor.active? %>
+  <%= link_to "deny", reject_admin_distributor_path(distributor) %>
+<% else %>
+  <%= link_to "approve", approve_admin_distributor_path(distributor) %>
+<% end %>

@@ -1,0 +1,13 @@
+<%= hook :admin_distributor_new_form_header do %>
+  <h1><%= t("new_distributor") %></h1>
+<% end %>
+
+<%= hook :admin_distributor_new_form do %>
+  <%= form_for [:admin, @distributor], :html => { :class => "distributor-form" } do |f| %>
+    <%= render :partial => "form", :locals => { :f => f } %>
+
+    <%= hook :admin_distributor_new_form_buttons do %>
+      <%= render :partial => "admin/shared/new_resource_links" %>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,0 +1,10 @@
+span.price_msrp,
+span.price_distribution { 
+  display: block;
+}
+span.price_msrp {
+  color: #c00e0e;
+}
+span.price_distribution {
+  color: #68962c;
+}

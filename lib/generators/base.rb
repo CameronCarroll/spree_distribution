@@ -1,4 +1,4 @@
-module SpreeWholesale
+module SpreeDistribution
   module Generators
     class Base < Rails::Generators::Base
     

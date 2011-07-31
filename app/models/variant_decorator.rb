@@ -1,7 +1,7 @@
 Variant.class_eval do 
   
-  def is_wholesaleable?
-    0 < wholesale_price
+  def is_distributable?
+    0 < distribution_price
   end
   
 end

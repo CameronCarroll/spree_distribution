@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
-  get '/wholesaler/states' => "wholesaler_states#index"
+  get '/distributor/states' => "distributor_states#index"
     
-  resources :wholesalers
+  resources :distributors
   
   namespace(:admin) do
   
-    resources :wholesalers do
+    resources :distributors do
       member do
         get :approve
         get :reject

@@ -1,16 +1,16 @@
 User.instance_eval do 
   
-  has_one :wholesaler
+  has_one :distributor
     
-  scope :wholesale, lambda { includes(:roles).where("roles.name" => "wholesaler") }
+  scope :distribution, lambda { includes(:roles).where("roles.name" => "distributor") }
 
     
 end
 
 User.class_eval do 
   
-  def wholesaler?
-    has_role?("wholesaler") && !wholesaler.nil?
+  def distributor?
+    has_role?("distributor") && !distributor.nil?
   end
   
 end

@@ -12,16 +12,16 @@ en:
   
   buyer_contact: "Buyer Contact"
 
-  wholesale: "Wholesale"
-  wholesaler: "Wholesaler"
-  wholesalers: "Wholesalers"
-  new_wholesaler: "New Wholesaler"
-  editing_wholesaler: "Edit Wholesaler"
-  wholesaler_account: "Wholesaler Account"
-  listing_wholesalers: "Listing Wholesaler"
-  wholesale_login: "Wholesale Login"
-  wholesale_apply: "Apply for a wholesale account"
-  wholesale_signup: Wholesale Signup
+  distribution: "Distribution"
+  distributor: "Distributor"
+  distributors: "Distributors"
+  new_distributor: "New Distributor"
+  editing_distributor: "Edit Distributor"
+  distributor_account: "Distributor Account"
+  listing_distributors: "Listing Distributor"
+  distribution_login: "Distribution Login"
+  distribution_apply: "Apply for a distribution account"
+  distribution_signup: Distribution Signup
   
   
   
@@ -30,12 +30,12 @@ en:
     address_form:
       use_for_shipping: "Use billing address for shipping"
 
-  wholesale_customer: "Wholesale Customer ID: #%{id}"
+  distribution_customer: "Distribution Customer ID: #%{id}"
 
   
-  wholesaler:
-    signup_success: Thank you for your interest in becoming a wholesaler! We'll be in touch shortly.
-    signup_failed: Wholesale account could not be created!
+  distributor:
+    signup_success: Thank you for your interest in becoming a distributor! We'll be in touch shortly.
+    signup_failed: Distribution account could not be created!
     parts_error_message: There are errors with the user or addresses
   
   
@@ -43,19 +43,19 @@ en:
     
     hooks:
       product_form_right:
-        master_wholesale_price: "Master Wholesale Price"
+        master_distribution_price: "Master Distribution Price"
       admin_orders_index_search:
-        show_wholesale_orders: "Show only wholesale orders"
+        show_distribution_orders: "Show only distribution orders"
         
     variants:
       form:
-        wholesale_price: "Wholesale Price"
+        distribution_price: "Distribution Price"
     
     
-    wholesalers:
+    distributors:
       
-      success: Wholesale account was successfully created
-      failed: Wholesale account could not be created
+      success: Distribution account was successfully created
+      failed: Distribution account could not be created
     
       index:
         company: "Company"

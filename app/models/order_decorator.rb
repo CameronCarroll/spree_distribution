@@ -1,15 +1,15 @@
 Order.class_eval do 
 
-  def wholesale
-    read_attribute(:wholesale) && !wholesaler.nil?
+  def distribution
+    read_attribute(:distribution) && !distributor.nil?
   end
 
-  def wholesaler
-    user && user.wholesaler
+  def distributor
+    user && user.distributor
   end
 
-  def is_wholesale?
-    wholesale
+  def is_distribution?
+    distribution
   end
   
   def set_line_item_prices(use_price=:price)
@@ -20,16 +20,16 @@ Order.class_eval do
   end
   
   def to_fullsale!
-    self.wholesale = false
+    self.distribution = false
     set_line_item_prices(:price)
     update!
     save
   end
     
-  def to_wholesale!
-    return false unless user.wholesaler.present?
-    self.wholesale = true
-    set_line_item_prices(:wholesale_price)
+  def to_distribution!
+    return false unless user.distributor.present?
+    self.distribution = true
+    set_line_item_prices(:distribution_price)
     update!
     save
   end
@@ -42,7 +42,7 @@ Order.class_eval do
     else
       current_item = LineItem.new(:quantity => quantity)
       current_item.variant = variant
-      current_item.price   = is_wholesale? ? variant.wholesale_price : variant.price
+      current_item.price   = is_distribution? ? variant.distribution_price : variant.price
       self.line_items << current_item
     end
 

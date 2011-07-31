@@ -47,8 +47,8 @@
 
 <% if billing %>
   <p class="field checkbox">
-    <label for="wholesaler_use_billing">
-      <%= check_box_tag 'wholesaler[use_billing]', '1', (!(@wholesaler.bill_address.nil? && @wholesaler.ship_address.nil?) && @wholesaler.bill_address.eql?(@wholesaler.ship_address)) %> <%= t(".use_for_shipping") %>
+    <label for="distributor_use_billing">
+      <%= check_box_tag 'distributor[use_billing]', '1', (!(@distributor.bill_address.nil? && @distributor.ship_address.nil?) && @distributor.bill_address.eql?(@distributor.ship_address)) %> <%= t(".use_for_shipping") %>
     </label>
   </p>  
 <% end %>

@@ -1,44 +1,44 @@
-Spree Wholesale
+Spree Distribution
 ===============
 
-Spree wholesale is a simple wholesale solution for Spree Commerce. Spree wholesale adds a wholesaler login and signup page as well as an admin to approve and deny applicants.
+Spree distribution is a simple distribution solution for Spree Commerce. Spree distribution adds a distributor login and signup page as well as an admin to approve and deny applicants.
 
 
 Installation
 ------------
 
 
-If you're on Spree 0.50.0 and above, you'll have to install Spree Wholesale from the source since I haven't released it yet. Just add this to your Gemfile:
+If you're on Spree 0.50.0 and above, you'll have to install Spree Distribution from the source since I haven't released it yet. Just add this to your Gemfile:
 
     # spree 0.70.x
-    gem 'spree_wholesale', :git => 'git://github.com/citrus/spree_wholesale'
+    gem 'spree_distribution', :git => 'git://github.com/citrus/spree_distribution'
     
     # spree 0.60.x
-    gem 'spree_wholesale', :git => 'git://github.com/citrus/spree_wholesale', :branch => '0.60.x'
+    gem 'spree_distribution', :git => 'git://github.com/citrus/spree_distribution', :branch => '0.60.x'
     
     # spree 0.50.x
-    gem 'spree_wholesale', :git => 'git://github.com/citrus/spree_wholesale', :branch => '0.50.x'
+    gem 'spree_distribution', :git => 'git://github.com/citrus/spree_distribution', :branch => '0.50.x'
     
 
 Otherwise just use the last stable release:
     
-    gem 'spree_wholesale', '0.40.2.2'
+    gem 'spree_distribution', '0.40.2.2'
     
     
-Then install the necessary migrations, db:migrate, and create the wholesale role:
+Then install the necessary migrations, db:migrate, and create the distribution role:
 
     # spree 0.50.x and above
-    rails g spree_wholesale:install
-    rake db:migrate spree_wholesale:create_role
+    rails g spree_distribution:install
+    rake db:migrate spree_distribution:create_role
 
     # legacy spree
-    rake spree_wholesale:install
-    rake db:migrate spree_wholesale:create_role
+    rake spree_distribution:install
+    rake db:migrate spree_distribution:create_role
       
       
-If you'd like to generate sample wholesale prices based on a 66% discount:
+If you'd like to generate sample distribution prices based on a 66% discount:
 
-    rake spree_wholesale:assume_wholesale_prices
+    rake spree_distribution:assume_distribution_prices
 
 
 
@@ -47,8 +47,8 @@ Testing
 
 If you'd like to run tests:
     
-    git clone git://github.com/citrus/spree_wholesale.git
-    cd spree_wholesale
+    git clone git://github.com/citrus/spree_distribution.git
+    cd spree_distribution
     bundle install
     bundle exec dummier
     bundle exec rake
@@ -57,10 +57,10 @@ If you'd like to run tests:
 Demo
 ----
 
-If you'd like a demo of spree_wholesale:
+If you'd like a demo of spree_distribution:
     
-    git clone git://github.com/citrus/spree_wholesale.git
-    cd spree_wholesale
+    git clone git://github.com/citrus/spree_distribution.git
+    cd spree_distribution
     mv test/dummy_hooks/after_migrate.rb.sample mv test/dummy_hooks/after_migrate.rb
     bundle install
     bundle exec dummier
@@ -79,8 +79,8 @@ To Do
 Known Issues
 -------
 
-* A user created in the 'user' tab, or an already existing user with an added 'wholesaler' flag will not be able to purchase at wholesale price. They will see the retail and wholesale price, but when added to cart will purchase at retail price. Only accounts created using wholesale interface work properly.
-* Deface override for admin_tabs (Adds wholesalers tab to admin interface) isn't targeting hook correctly, and has been set to insert to bottom of the div#store-menu ul instead.
+* A user created in the 'user' tab, or an already existing user with an added 'distributor' flag will not be able to purchase at distribution price. They will see the retail and distribution price, but when added to cart will purchase at retail price. Only accounts created using distribution interface work properly.
+* Deface override for admin_tabs (Adds distributors tab to admin interface) isn't targeting hook correctly, and has been set to insert to bottom of the div#store-menu ul instead.
 
 
 Contributors

@@ -3,7 +3,7 @@ Spree::CurrentOrder.module_eval do
   # Associate the new order with the currently authenticated user before saving
   def before_save_new_order
     @current_order.user ||= current_user
-    @current_order.wholesale = current_user.wholesaler? if current_user
+    @current_order.distribution = current_user.distributor? if current_user
   end
 
   def after_save_new_order
@@ -24,9 +24,9 @@ Spree::CurrentOrder.module_eval do
     end
     
     if current_user && @current_order
-      if current_user.wholesaler? && !@current_order.is_wholesale?
-        @current_order.to_wholesale!
-      elsif !current_user.wholesaler? && @current_order.is_wholesale?
+      if current_user.distributor? && !@current_order.is_distribution?
+        @current_order.to_distribution!
+      elsif !current_user.distributor? && @current_order.is_distribution?
         @current_order.to_fullsale!
       end
     end

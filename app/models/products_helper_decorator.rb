@@ -14,11 +14,6 @@ ProductsHelper.module_eval do
       prices << [product_or_variant.distribution_price, "distribution"]
     end
     
-    #Add wholesale price
-    if wholesale_signed_in? && product_or_variant.is_wholesaleable?
-      prices[0] = [prices[0], "msrp"]
-      prices << [product_or_variant.wholesale_price, "wholesale"]
-    end
     
     format_as_currency = options.delete(:format_as_currency)
     hide_labels = options.delete(:hide_labels)

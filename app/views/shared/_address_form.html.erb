@@ -45,10 +45,11 @@
   <%= form.text_field :phone, :class => 'required' %><span class="req">*</span>
 </p>
 
-<% if billing %>
+<%=begin%><% if billing %>
   <p class="field checkbox">
     <label for="distributor_use_billing">
       <%= check_box_tag 'distributor[use_billing]', '1', (!(@distributor.bill_address.nil? && @distributor.ship_address.nil?) && @distributor.bill_address.eql?(@distributor.ship_address)) %> <%= t(".use_for_shipping") %>
     </label>
   </p>  
-<% end %>
+<% end %> <%=end%>
+  

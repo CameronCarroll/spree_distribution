@@ -98,7 +98,7 @@
     <legend>Billing Address Details:</legend>
     <%= fields_for :bill_address, @bill_address do |af| %>
       <%= render "shared/error_messages", :target => @bill_address %>
-      <%= render 'shared/address_form', :form => af, :address => @bill_address, :billing => true %>
+      <%= render 'shared/distribution_address_form', :form => af, :address => @bill_address, :billing => true %>
     <% end %>
   </fieldset>
   

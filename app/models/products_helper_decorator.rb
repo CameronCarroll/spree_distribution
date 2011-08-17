@@ -13,7 +13,7 @@ ProductsHelper.module_eval do
       prices[0] = [prices[0], "msrp"]
       prices << [product_or_variant.distribution_price, "distribution"]
     end
-    
+      
     
     format_as_currency = options.delete(:format_as_currency)
     hide_labels = options.delete(:hide_labels)

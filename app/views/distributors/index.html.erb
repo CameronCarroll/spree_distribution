@@ -15,7 +15,14 @@
   <div class="right">  
     <%= hook :distribution_index_login do %>
       <h3><%= t('distribution_login') %></h3>
-      <%= render 'shared/login' %>
+      
+      <% if !@user.distributor? %>
+        <%= render 'shared/login' %>
+      <% end %>
+      
+      <% if @user.distributor? %>
+        <%= render 'shared/logged_in'%>
+      <% end %>
     <% end %>
   </div>
 </div>

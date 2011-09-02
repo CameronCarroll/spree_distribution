@@ -45,10 +45,14 @@
       <%= form.label :web_address %><br/>
       <%= form.text_field :web_address %>
     </p>
+    
+    <% if false %>
     <p>
       <%= form.label :terms %><br/>
       <%= form.select :terms, Distributor.term_options, :class => 'required' %><span class="req">*</span>
     </p>
+    <% end %>
+    
     <p>
       <%= form.label :notes %><br/>
       <%= form.text_area :notes %>

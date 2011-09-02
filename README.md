@@ -1,3 +1,5 @@
+Notice: This is the exact same thing as Spree Wholesale, but not maintained and with modifications to force it to work side-by-side with spree-wholesale. If you also need the functionality of two separate instances of wholesale signup/pricing and stuff, you can try and see if this works for you. The wholesale pricing is broken, but I'm not using that so I'm not going to fix it. (Doesn't show up properly in admin interface, so you can't really set wholesale/distribution prices.) In addition, they are stripped from the customer's viewpoint as well, to be replaced by a percentage system.
+
 Spree Distribution
 ===============
 
